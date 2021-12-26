@@ -34,68 +34,68 @@ describe('addVertices', function () {
   });
 });
 
-// describe("addEdge", function() {
-//   it("should add the appropriate edges to the adjacency list", function() {
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     let d = new Node("D");
-//     graph.addVertices([a, b, c, d]);
-//     graph.addEdge(a, b);
-//     graph.addEdge(a, c);
-//     graph.addEdge(b, d);
-//     graph.addEdge(c, d);
-//     expect(a.adjacent).toContain(b, c);
-//     expect(b.adjacent).toContain(a, d);
-//     expect(c.adjacent).toContain(a, d);
-//     expect(d.adjacent).toContain(b, c);
-//   });
-// });
+describe('addEdge', function () {
+  it('should add the appropriate edges to the adjacency list', function () {
+    let graph = new Graph();
+    let a = new Node('A');
+    let b = new Node('B');
+    let c = new Node('C');
+    let d = new Node('D');
+    graph.addVertices([a, b, c, d]);
+    graph.addEdge(a, b);
+    graph.addEdge(a, c);
+    graph.addEdge(b, d);
+    graph.addEdge(c, d);
+    expect(a.adjacent).toContain(b, c);
+    expect(b.adjacent).toContain(a, d);
+    expect(c.adjacent).toContain(a, d);
+    expect(d.adjacent).toContain(b, c);
+  });
+});
 
-// describe("removeEdge", function() {
-//   it("should remove the vertices from the adjacency list", function() {
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     let d = new Node("D");
-//     graph.addVertices([a, b, c, d]);
-//     graph.addEdge(a, b);
-//     graph.addEdge(a, c);
-//     graph.addEdge(b, d);
-//     graph.addEdge(c, d);
+describe('removeEdge', function () {
+  it('should remove the vertices from the adjacency list', function () {
+    let graph = new Graph();
+    let a = new Node('A');
+    let b = new Node('B');
+    let c = new Node('C');
+    let d = new Node('D');
+    graph.addVertices([a, b, c, d]);
+    graph.addEdge(a, b);
+    graph.addEdge(a, c);
+    graph.addEdge(b, d);
+    graph.addEdge(c, d);
 
-//     graph.removeEdge(b, a);
-//     graph.removeEdge(c, d);
+    graph.removeEdge(b, a);
+    graph.removeEdge(c, d);
 
-//     expect(a.adjacent).not.toContain(b);
-//     expect(c.adjacent).not.toContain(d);
-//   });
-// });
+    expect(a.adjacent).not.toContain(b);
+    expect(c.adjacent).not.toContain(d);
+  });
+});
 
-// describe("removeVertex", function() {
-//   it("should remove the vertex as well as any edges", function() {
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     let d = new Node("D");
-//     graph.addVertices([a, b, c, d]);
-//     graph.addEdge(a, b);
-//     graph.addEdge(a, c);
-//     graph.addEdge(b, d);
-//     graph.addEdge(c, d);
+describe('removeVertex', function () {
+  it('should remove the vertex as well as any edges', function () {
+    let graph = new Graph();
+    let a = new Node('A');
+    let b = new Node('B');
+    let c = new Node('C');
+    let d = new Node('D');
+    graph.addVertices([a, b, c, d]);
+    graph.addEdge(a, b);
+    graph.addEdge(a, c);
+    graph.addEdge(b, d);
+    graph.addEdge(c, d);
 
-//     graph.removeVertex(c);
-//     graph.removeVertex(d);
+    graph.removeVertex(c);
+    graph.removeVertex(d);
 
-//     expect(graph.nodes.has(a)).toBeTruthy();
-//     expect(graph.nodes.has(b)).toBeTruthy();
-//     expect(graph.nodes.has(c)).toBeFalsy();
-//     expect(graph.nodes.has(d)).toBeFalsy();
-//   });
-// });
+    expect(graph.nodes.has(a)).toBeTruthy();
+    expect(graph.nodes.has(b)).toBeTruthy();
+    expect(graph.nodes.has(c)).toBeFalsy();
+    expect(graph.nodes.has(d)).toBeFalsy();
+  });
+});
 
 // describe("DFS", function() {
 //   it("return an array of the nodes searched using DFS", function() {

@@ -23,13 +23,28 @@ class Graph {
   }
 
   // this function accepts two vertices and updates their adjacent values to include the other vertex
-  addEdge(v1, v2) {}
+  addEdge(v1, v2) {
+    v1.adjacent.add(v2);
+    v2.adjacent.add(v1);
+  }
 
   // this function accepts two vertices and updates their adjacent values to remove the other vertex
-  removeEdge(v1, v2) {}
+  removeEdge(v1, v2) {
+    v1.adjacent.delete(v2);
+    v2.adjacent.delete(v1);
+  }
 
   // this function accepts a vertex and removes it from the nodes property, it also updates any adjacency lists that include that vertex
-  removeVertex(vertex) {}
+  removeVertex(vertex) {
+    // for each node look for the vertex in adjacents and remove
+    for (let node of this.nodes) {
+      if (node.adjacent.has(vertex)) {
+        node.adjacent.delete(vertex);
+      }
+    }
+    // remove the vertex from the current node
+    this.nodes.delete(vertex);
+  }
 
   // this function returns an array of Node values using DFS
   depthFirstSearch(start) {}
